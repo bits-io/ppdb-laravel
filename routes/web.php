@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\PendaftaranController;
 use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +22,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/login', [AuthController::class, 'indexLogin']);
+Route::get('/login', [AuthController::class, 'indexLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'authenticate']);
 Route::post('/logout', [AuthController::class, 'logout']);
 
@@ -29,4 +31,7 @@ Route::post('/register', [AuthController::class, 'storeRegister']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
-Route::resource('/students', SiswaController::class)->middleware('auth');
+Route::resource('/siswa', SiswaController::class)->middleware('auth');
+Route::resource('/pendaftaran', PendaftaranController::class)->middleware('auth');
+Route::resource('/pembayaran', PembayaranController::class)->middleware('auth');
+// Route::get('/laporan', SiswaController::class)->middleware('auth');

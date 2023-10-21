@@ -66,7 +66,7 @@ class AuthController extends Controller
 
         try {
             $siswa = new Siswa();
-            $siswa->nama_lengkap = $request->input('nama_lengkap');
+            $siswa->name = $request->input('nama_lengkap');
             $siswa->tempat_lahir = $request->input('tempat_lahir');
             $siswa->tanggal_lahir = date("Y-m-d", strtotime($request->input('tanggal_lahir')));
             $siswa->jenis_kelamin = $request->input('jenis_kelamin');

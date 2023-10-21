@@ -24,7 +24,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('siswa_id')->on('siswas')->references('id');
-            $table->foreign('admin_id')->on('users')->references('id');
+            $table->foreign('admin_id')->on('admins')->references('id');
         });
     }
 

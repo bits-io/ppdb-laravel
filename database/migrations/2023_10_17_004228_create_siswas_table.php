@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('siswas', function (Blueprint $table) {
             $table->id();
             $table->string('nis')->unique();
-            $table->string('nama_lengkap');
+            $table->string('name');
             $table->date('tanggal_lahir');
             $table->string('tempat_lahir');
             $table->string('jenis_kelamin');
@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('alamat');
             $table->string('email');
             $table->string('password');
+            $table->string('status');
             $table->timestamps();
         });
     }

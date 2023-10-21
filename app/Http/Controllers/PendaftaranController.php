@@ -12,7 +12,11 @@ class PendaftaranController extends Controller
      */
     public function index()
     {
-        //
+        $siswas = Pendaftaran::latest()->get();
+
+        return view('dashboard.pendaftaran.index',[
+            'siswas' => $siswas
+        ]);
     }
 
     /**

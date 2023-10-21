@@ -2,39 +2,58 @@
 
 @section('container')
 
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">My Posts</h1>
-</div>
+<div class="container-fluid">
 
-<div class="table-responsive col-lg-8">
-    <table class="table table-striped table-sm">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Title</th>
-          <th scope="col">Category</th>
-          <th scope="col">Action</th>
-        </tr>
-      </thead>
-      <tbody>
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Data siswa</h1>
+    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
+        For more information about DataTables, please visit the <a target="_blank"
+            href="https://datatables.net">official DataTables documentation</a>.</p>
 
-        @foreach ($posts as $post)
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <a href="/siswa/create" class="btn btn-success">Tambah Siswa</a>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>Tempat/Tanggal Lahir</th>
+                            <th>Start date</th>
+                            <th>Salary</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>Tempat/Tanggal Lahir</th>
+                            <th>Start date</th>
+                            <th>Salary</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @foreach ($siswas as $siswa)
 
-        <tr>
-          <td>{{ $loop->iteration }}</td>
-          <td>{{ $post->title }}</td>
-          <td>{{ $post->category->name }}</td>
-          <td>
-            <a href="/dashboard/posts/{{ $post->slug }}" class="btn btn-sm btn-info"><span data-feather="eye"></span></a>
-            <a href="/dashboard/posts/{{ $post->slug }}/edit" class="btn btn-sm btn-warning"><span data-feather="edit"></span></a>
-            <a href="#" class="btn btn-sm btn-danger"><span data-feather="x-circle"></span></a>
-          </td>
-        </tr>
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $siswa->name }}</td>
+                            <td>{{ $siswa->tempat_lahir }}/{{ $siswa->tanggal_lahir }}</td>
+                            <td>2011/04/25</td>
+                            <td>$320,800</td>
+                        </tr>
 
-        @endforeach
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
-      </tbody>
-    </table>
 </div>
 
 @endsection

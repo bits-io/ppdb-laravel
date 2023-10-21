@@ -12,7 +12,7 @@ class SiswaController extends Controller
      */
     public function index()
     {
-        $siswas = Siswa::all();
+        $siswas = Siswa::latest()->get();
 
         return view('dashboard.siswa.index',[
             'siswas' => $siswas
