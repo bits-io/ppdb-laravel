@@ -9,6 +9,20 @@ class Pembayaran extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'pendaftaran_id',
+        'no_pembayaran',
+        'nama_bank',
+        'bukti',
+        'total_bayar',
+        'status'
+    ];
+
+    public function pendaftaran()
+    {
+        return $this->belongsTo(Pendaftaran::class, 'pendaftaran_id');
+    }
+
     protected static function boot()
     {
         parent::boot();

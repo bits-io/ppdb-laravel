@@ -2,21 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pendaftaran;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class PendaftaranController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $pendaftarans = Pendaftaran::latest()->get();
-
-        return view('dashboard.pendaftaran.index',[
-            'pendaftarans' => $pendaftarans
-        ]);
+        return view('dashboard.profile.index');
     }
 
     /**
@@ -38,7 +34,7 @@ class PendaftaranController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Pendaftaran $pendaftaran)
+    public function show(User $user)
     {
         //
     }
@@ -46,7 +42,7 @@ class PendaftaranController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Pendaftaran $pendaftaran)
+    public function edit(User $user)
     {
         //
     }
@@ -54,7 +50,7 @@ class PendaftaranController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Pendaftaran $pendaftaran)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -62,7 +58,7 @@ class PendaftaranController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Pendaftaran $pendaftaran)
+    public function destroy(User $user)
     {
         //
     }

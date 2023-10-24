@@ -2,25 +2,47 @@
 
 @section('container')
 
-<div class="container">
-    <div class="row my-3">
-        <div class="col-lg-8">
-            <h2>{{ $post->title }}</h2>
+<div class="container-fluid">
 
-            <a href="/dashboard/posts" class="btn btn-success"><span data-feather="arrow-left"></span> Back to my posts</a>
-            <a href="/dashboard/posts/{{ $post->slug }}/edit" class="btn btn-warning"><span data-feather="edit"></span> Edit</a>
-            <a href="" class="btn btn-danger"><span data-feather="x-circle"></span> Delete</a>
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Data siswa</h1>
+    <a href="/siswa" class="btn btn-success mb-4"><i class="fas fa-fw fa-arrow-left"></i> Kembali</a>
+    <a href="/siswa/{{ $siswa->id }}/edit" class="btn btn-warning mb-4"><i class="fas fa-fw fa-edit"></i> Edit</a>
 
-            <img class="img-fluid mt-3" src="https://source.unsplash.com/1200x400/?{{ $post->category->name }}" class="card-img-top" alt="{{ $post->category->name }}">
+            <div class="row">
+                <div class="col-lg-4">
+                    <!-- Two factor authentication card-->
+                    <div class="card mb-4">
+                        <div class="card-header">Data Siswa</div>
+                        <div class="card-body">
+                            <p>NIS : {{ $siswa->nis }}</p>
+                            <p>Nama : {{ $siswa->name }}</p>
+                            <p>Tanggal Lahir : {{ $siswa->tanggal_lahir }}</p>
+                            <p>Tempat Lahir : {{ $siswa->tempat_lahir }}</p>
+                            <p>Jenis Kelamin : {{ $siswa->jenis_kelamin }}</p>
+                            <p>Agama : {{ $siswa->agama }}</p>
+                            <p>Alamat : {{ $siswa->alamat }}</p>
+                            <p>Email : {{ $siswa->email }}</p>
 
-            <article class="my-3 fs-5">
-                {!! $post->body !!}
-            </article>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <!-- Two factor authentication card-->
+                    <div class="card mb-4">
+                        <div class="card-header">Data Orang tua</div>
+                        <div class="card-body">
+                            <p>Nama : {{ $siswa->orangtua->nama }}</p>
+                            <p>Pekerjaan : {{ $siswa->orangtua->pekerjaan }}</p>
+                            <p>Penghasilan : {{ $siswa->orangtua->penghasilan }}</p>
+                            <p>No HP : {{ $siswa->orangtua->no_hp_orangtua }}</p>
+                        </div>
+                    </div>
+                </div>
 
-            <a class="d-block mt-3" href="/blog">Back to Posts</a>
+            </div>
 
-        </div>
-    </div>
+
 </div>
 
 @endsection

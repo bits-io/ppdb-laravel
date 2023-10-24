@@ -39,7 +39,6 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Data Siswa:</h6>
                         <a class="collapse-item" href="/siswa?status=Lulus">Lulus</a>
-                        <a class="collapse-item" href="/siswa?status=Proses">Lulus</a>
                         <a class="collapse-item" href="/siswa?status=TidakLulus">Tidak Lulus</a>
                     </div>
                 </div>

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('nama')->nullable();
             $table->string('pekerjaan');
             $table->integer('penghasilan');
+            $table->string('no_hp_orangtua');
             $table->timestamps();
 
             $table->foreign('siswa_id')->on('siswas')->references('id');

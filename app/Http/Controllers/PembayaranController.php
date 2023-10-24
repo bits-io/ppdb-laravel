@@ -12,10 +12,10 @@ class PembayaranController extends Controller
      */
     public function index()
     {
-        $siswas = Pembayaran::latest()->get();
+        $pembayarans = Pembayaran::latest()->get();
 
         return view('dashboard.pembayaran.index',[
-            'siswas' => $siswas
+            'pembayarans' => $pembayarans
         ]);
     }
 

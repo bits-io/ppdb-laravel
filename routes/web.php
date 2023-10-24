@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\PendaftaranController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,4 +35,5 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 Route::resource('/siswa', SiswaController::class)->middleware('auth');
 Route::resource('/pendaftaran', PendaftaranController::class)->middleware('auth');
 Route::resource('/pembayaran', PembayaranController::class)->middleware('auth');
+Route::resource('/profile', ProfileController::class)->middleware('auth');
 // Route::get('/laporan', SiswaController::class)->middleware('auth');

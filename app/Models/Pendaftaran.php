@@ -9,6 +9,25 @@ class Pendaftaran extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'siswa_id',
+        'admin_id',
+        'no_pendaftaran',
+        'asal_sekolah',
+        'tahun_ajaran',
+        'status'
+    ];
+
+    public function siswa()
+    {
+        return $this->belongsTo(Siswa::class, 'siswa_id');
+    }
+
+    public function admin()
+    {
+        return $this->belongsTo(User::class, 'admin_id');
+    }
+
     protected static function boot()
     {
         parent::boot();

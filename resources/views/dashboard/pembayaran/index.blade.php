@@ -5,49 +5,54 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Data siswa</h1>
-    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-        For more information about DataTables, please visit the <a target="_blank"
-            href="https://datatables.net">official DataTables documentation</a>.</p>
+    <h1 class="h3 mb-2 text-gray-800">Data pembayaran</h1>
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <a href="/siswa/create" class="btn btn-success">Tambah Siswa</a>
+            <a href="/siswa/create" class="btn btn-success">Tambah pembayaran</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
+                            <th>No Pembayaran</th>
+                            <th>No Pendaftaran</th>
+                            <th>Nama Bank</th>
+                            <th>Bukti</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
-                    {{-- <tfoot>
+                    <tfoot>
                         <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
+                            <th>No Pembayaran</th>
+                            <th>No Pendaftaran</th>
+                            <th>Nama Bank</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
                         </tr>
-                    </tfoot> --}}
+                    </tfoot>
                     <tbody>
-                        @foreach ($siswas as $siswa)
+                        @foreach ($pembayarans as $pembayaran)
 
                         <tr>
-                            <td>{{ $loop->iteration }}</td>
-                            <td>{{ $siswa->name }}</td>
-                            <td>{{ $siswa->tempat_lahir }}</td>
-                            <td>{{ $siswa->tanggal_lahir }}</td>
-                            <td>2011/04/25</td>
-                            <td>$320,800</td>
+                            <td>{{ $pembayaran->no_pembayaran }}</td>
+                            <td>{{ $pembayaran->pendaftaran->no_pendaftaran }}</td>
+                            <td>{{ $pembayaran->nama_bank }}</td>
+                            <td>{{ $pembayaran->total_bayar }}</td>
+                            <td>{{ $pembayaran->status }}</td>
+                            <td>
+                                <a href="/pembayaran/{{ $pembayaran->id }}" class="btn btn-sm btn-info border-0"><i class="fas fa-fw fa-eye"></i></a>
+                                <a href="/pembayaran/{{ $pembayaran->id }}/edit" class="btn btn-sm btn-warning border-0"><i class="fas fa-fw fa-edit"></i></a>
+                                <form action="/pembayaran/{{ $pembayaran->id }}" method="post" class="d-inline">
+                                    @method('delete')
+                                    @csrf
+                                    <button class="btn btn-sm btn-danger border-0" onclick="return confirm('Are you sure?')"><i class="fas fa-fw fa-trash"></i></button>
+                                </form>
+                            </td>
                         </tr>
 
                         @endforeach

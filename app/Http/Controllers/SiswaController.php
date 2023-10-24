@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Siswa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class SiswaController extends Controller
 {
@@ -40,7 +41,9 @@ class SiswaController extends Controller
      */
     public function show(Siswa $siswa)
     {
-        //
+        return view('dashboard.siswa.show',[
+            'siswa'=>$siswa
+        ]);
     }
 
     /**
@@ -48,7 +51,9 @@ class SiswaController extends Controller
      */
     public function edit(Siswa $siswa)
     {
-        //
+        return view('dashboard.siswa.edit', [
+            'siswa' => $siswa,
+        ]);
     }
 
     /**
@@ -56,7 +61,33 @@ class SiswaController extends Controller
      */
     public function update(Request $request, Siswa $siswa)
     {
-        //
+        $request->validate([
+            'nis' => 'required|max:255|unique:siswas,nis,' . $siswa->id,
+            'name' => 'required|max:255',
+            'tanggal_lahir' => 'required|date',
+            'tempat_lahir' => 'required|max:255',
+            'jenis_kelamin' => 'required|max:255',
+            'agama' => 'required|max:255',
+            'alamat' => 'required|max:255',
+            'email' => 'required|max:255|email',
+            'password' => 'nullable|max:255'
+        ]);
+
+        $siswa->nis = $request->nis;
+        $siswa->name = $request->name;
+        $siswa->tanggal_lahir = $request->tanggal_lahir;
+        $siswa->tempat_lahir = $request->tempat_lahir;
+        $siswa->jenis_kelamin = $request->jenis_kelamin;
+        $siswa->agama = $request->agama;
+        $siswa->alamat = $request->alamat;
+
+        if ($request->password) {
+            $siswa->password = Hash::make($request->password);
+        }
+
+        $siswa->save();
+
+        return redirect('/siswa')->with('success', 'siswa updated');
     }
 
     /**

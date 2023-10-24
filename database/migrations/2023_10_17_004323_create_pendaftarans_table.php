@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('pendaftarans', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('siswa_id');
-            $table->unsignedBigInteger('admin_id');
+            $table->unsignedBigInteger('admin_id')->nullable();
 
             $table->string('no_pendaftaran')->unique();
             $table->string('asal_sekolah');

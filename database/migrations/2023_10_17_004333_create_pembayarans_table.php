@@ -16,8 +16,9 @@ return new class extends Migration
             $table->unsignedBigInteger('pendaftaran_id');
             $table->string('no_pembayaran')->unique();
             $table->string('nama_bank')->nullable()->default(NULL);
-            $table->integer('bukti');
-            $table->integer('status');
+            $table->string('bukti')->nullable();
+            $table->integer('total_bayar');
+            $table->string('status');
             $table->timestamps();
         });
     }

@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\OrangTua;
+use App\Models\Pembayaran;
 use App\Models\Pendaftaran;
 use App\Models\Siswa;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class AuthController extends Controller
 {
@@ -26,8 +30,17 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
 
+        $findUser = User::where('email', $request->email)->first();
+        if (!$findUser) {
+            return back()->with('error', 'Login failed!');
+        }
+
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
+
+            session()->put('login', true);
+            session()->put('user', $findUser);
+
             return redirect()->intended('/dashboard');
         }
 
@@ -44,6 +57,7 @@ class AuthController extends Controller
     public function storeRegister(Request $request)
     {
         $request->validate([
+            'nis' => 'required',
             'nama_lengkap' => 'required',
             'tempat_lahir' => 'required',
             'tanggal_lahir' => 'required|date',
@@ -59,13 +73,17 @@ class AuthController extends Controller
             'nama_orangtua' => 'required',
             'penghasilan' => 'required|numeric',
             'pekerjaan' => 'required',
-            'no_hp_orangtua' => 'required'
+            'no_hp_orangtua' => 'required',
+
+            'nama_bank' => 'required',
+            'bukti' => 'required|max:2048',
         ]);
 
         DB::beginTransaction();
 
         try {
             $siswa = new Siswa();
+            $siswa->nis = $request->input('nis');
             $siswa->name = $request->input('nama_lengkap');
             $siswa->tempat_lahir = $request->input('tempat_lahir');
             $siswa->tanggal_lahir = date("Y-m-d", strtotime($request->input('tanggal_lahir')));
@@ -74,26 +92,57 @@ class AuthController extends Controller
             $siswa->alamat = $request->input('alamat');
             $siswa->email = $request->input('email');
             $siswa->password = Hash::make($request->input('password'));
+            $siswa->status = 'Tidak Lulus';
             $siswa->save();
 
             $orangtua = new OrangTua();
-            $orangtua->id_siswa = $siswa->id;
-            $orangtua->nama_orangtua = $request->input('nama_orangtua');
+            $orangtua->siswa_id = $siswa->id;
+            $orangtua->nama = $request->input('nama_orangtua');
             $orangtua->penghasilan = $request->input('penghasilan');
             $orangtua->pekerjaan = $request->input('pekerjaan');
             $orangtua->no_hp_orangtua = $request->input('no_hp_orangtua');
             $orangtua->save();
 
             $pendaftaran = new Pendaftaran();
-            $pendaftaran->id_siswa = $siswa->id;
+            $pendaftaran->siswa_id = $siswa->id;
+            $pendaftaran->asal_sekolah = $request->input('asal_sekolah');
+            $pendaftaran->tahun_ajaran = $request->input('tahun_ajaran');
+            $pendaftaran->status = "Proses";
+            $pendaftaran->save();
+
+            $totalBayar = 50000;
+
+            $pembayaran = new Pembayaran();
+            $pembayaran->pendaftaran_id = $pendaftaran->id;
+            $pembayaran->nama_bank = $request->nama_bank;
+            $pembayaran->total_bayar = $totalBayar;
+            $pembayaran->status = "Proses";
+
+            if ($request->hasFile('bukti')) {
+
+                $bukti = $request->file('bukti');
+
+                $filename = Storage::disk('public')->put('pembayaran/bukti', $bukti);
+
+                // Custom name
+                $customName = '/pembayaran/bukti/' . $request->input('nis') . '-' . Str::slug($request->input('nama_lengkap')) . '-' . date('Ymdhis') . '.' . $bukti->getClientOriginalExtension();
+                Storage::move($filename, 'public/pembayaran/bukti/' . $customName);
+
+                $pembayaran->bukti = $customName;
+
+            }
+
+            $pembayaran->save();
 
 
 
             DB::commit();
             return redirect('/login')->with('success', 'Registration Successfully!');
         } catch (\Throwable $th) {
+
             DB::rollBack();
-            return redirect('/register')->with('error', 'Registration Failed!');
+            throw $th;
+            // return redirect('/register')->with('error', 'Registration Failed!');
         }
 
 
@@ -105,6 +154,7 @@ class AuthController extends Controller
 
         $request->session()->invalidate();
         $request->session()->regenerateToken();
+        session()->flush();
 
         return redirect('/');
     }
