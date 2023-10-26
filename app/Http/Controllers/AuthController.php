@@ -26,19 +26,21 @@ class AuthController extends Controller
     public function authenticate(Request $request)
     {
         $credentials = $request->validate([
-            'email' => 'required|email:dns',
+            'email' => 'required|email',
             'password' => 'required'
         ]);
 
         $findUser = User::where('email', $request->email)->first();
+
         if (!$findUser) {
             return back()->with('error', 'Login failed!');
         }
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt($credentials) && $findUser) {
             $request->session()->regenerate();
 
             session()->put('login', true);
+            session()->put('role', 'Admin');
             session()->put('user', $findUser);
 
             return redirect()->intended('/dashboard');
@@ -64,7 +66,7 @@ class AuthController extends Controller
             'jenis_kelamin' => 'required',
             'agama' => 'required',
             'alamat' => 'required',
-            'email' => 'required|email:dns',
+            'email' => 'required|unique:siswas|email',
             'password' => 'required',
 
             'asal_sekolah' => 'required',
@@ -125,10 +127,10 @@ class AuthController extends Controller
                 $filename = Storage::disk('public')->put('pembayaran/bukti', $bukti);
 
                 // Custom name
-                $customName = '/pembayaran/bukti/' . $request->input('nis') . '-' . Str::slug($request->input('nama_lengkap')) . '-' . date('Ymdhis') . '.' . $bukti->getClientOriginalExtension();
-                Storage::move($filename, 'public/pembayaran/bukti/' . $customName);
+                // $customName = '/pembayaran/bukti/' . $request->input('nis') . '-' . Str::slug($request->input('nama_lengkap')) . '-' . date('Ymdhis') . '.' . $bukti->getClientOriginalExtension();
+                // Storage::move($filename, 'public/pembayaran/bukti/' . $customName);
 
-                $pembayaran->bukti = $customName;
+                $pembayaran->bukti = $filename;
 
             }
 
@@ -137,7 +139,7 @@ class AuthController extends Controller
 
 
             DB::commit();
-            return redirect('/login')->with('success', 'Registration Successfully!');
+            return redirect("/pendaftaran/".$pendaftaran->no_pendaftaran )->with('success', 'Registration Successfully!');
         } catch (\Throwable $th) {
 
             DB::rollBack();

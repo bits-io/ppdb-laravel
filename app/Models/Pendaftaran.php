@@ -28,12 +28,17 @@ class Pendaftaran extends Model
         return $this->belongsTo(User::class, 'admin_id');
     }
 
+    public function pembayaran()
+    {
+        return $this->hasOne(Pembayaran::class);
+    }
+
     protected static function boot()
     {
         parent::boot();
 
         static::creating(function ($pendaftaran) {
-            $prefix = 'BYR-';
+            $prefix = 'DFTR-';
             $date = now()->format('Ymdhis');
             $unique = uniqid();
 

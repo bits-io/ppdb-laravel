@@ -7,6 +7,18 @@
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Data pembayaran</h1>
 
+    @if (session()->has('success'))
+    <div class="alert alert-success" role="alert">
+        {{ session('success') }}
+    </div>
+    @endif
+
+    @if (session()->has('error'))
+    <div class="alert alert-success" role="alert">
+        {{ session('error') }}
+    </div>
+    @endif
+
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">

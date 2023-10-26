@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('jenis_kelamin');
             $table->string('agama');
             $table->string('alamat');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('password');
             $table->string('status');
             $table->timestamps();

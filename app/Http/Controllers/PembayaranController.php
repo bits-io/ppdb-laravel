@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pembayaran;
+use App\Models\Pendaftaran;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PembayaranController extends Controller
 {
@@ -40,7 +42,9 @@ class PembayaranController extends Controller
      */
     public function show(Pembayaran $pembayaran)
     {
-        //
+        return view('dashboard.pembayaran.show', [
+            'pembayaran'=>$pembayaran,
+        ]);
     }
 
     /**
@@ -48,7 +52,9 @@ class PembayaranController extends Controller
      */
     public function edit(Pembayaran $pembayaran)
     {
-        //
+        return view('dashboard.pembayaran.edit', [
+            'pembayaran'=>$pembayaran,
+        ]);
     }
 
     /**
@@ -56,7 +62,28 @@ class PembayaranController extends Controller
      */
     public function update(Request $request, Pembayaran $pembayaran)
     {
-        //
+        $request->validate([
+            'status' => 'required|in:Proses,Lunas,Belum Bayar'
+        ]);
+
+        DB::beginTransaction();
+        try {
+            $pembayaran->status = $request->status;
+            $pembayaran->save();
+
+            if($request->status == "Lunas"){
+                $siswa = Pendaftaran::where("id", $pembayaran->pendaftaran_id)->first();
+                $siswa->status = 'Proses';
+                $siswa->save();
+            }
+
+            DB::commit();
+            return redirect('/pembayaran')->with('success', 'pendaftaran updated');
+
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            return redirect('/pembayaran')->with('error', 'pendaftaran error updated');
+        }
     }
 
     /**
