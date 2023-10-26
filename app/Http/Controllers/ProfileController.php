@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -12,7 +13,10 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('dashboard.profile.index');
+        $user = auth()->user();
+        return view('dashboard.profile.index',[
+            'user' => $user
+        ]);
     }
 
     /**
@@ -52,7 +56,22 @@ class ProfileController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:255',
+            'password' => 'nullable|max:255'
+        ]);
+
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+
+        if ($request->password) {
+            $user->password = Hash::make($request->password);
+        }
+
+        $user->save();
+
+        return redirect('/profile')->with('success', 'siswa updated');
     }
 
     /**
