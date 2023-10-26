@@ -56,6 +56,7 @@
           <li><a class="nav-link scrollto" href="#gambar">Gambar</a></li>
 
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto button button-success" href="/find">Cari No Pendaftaran</a></li>
           <li><a class="nav-link scrollto button button-success" href="/login">Login</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

@@ -160,4 +160,25 @@ class AuthController extends Controller
 
         return redirect('/');
     }
+
+    public function indexFind()
+    {
+        return view('auth.find',[
+            'title' => 'Cari Pendaftaran'
+        ]);
+    }
+
+    public function find(Request $request)
+    {
+        $request->validate([
+            'find' => 'required',
+        ]);
+
+        $pendaftaran = Pendaftaran::where('no_pendaftaran', $request->find)->first();
+        if (!$pendaftaran) {
+            return back()->with('error', 'Nomor not found!');
+        }
+
+        return redirect("/pendaftaran/".$request->find )->with('success', 'Registration Successfully!');
+    }
 }
