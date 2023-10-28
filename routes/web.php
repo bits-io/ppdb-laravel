@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\PendaftaranController;
 use App\Http\Controllers\ProfileController;
@@ -40,4 +41,6 @@ Route::resource('/siswa', SiswaController::class)->middleware('auth');
 Route::resource('/pendaftaran', PendaftaranController::class)->middleware('auth');
 Route::resource('/pembayaran', PembayaranController::class)->middleware('auth');
 Route::resource('/profile', ProfileController::class)->middleware('auth');
-// Route::get('/laporan', SiswaController::class)->middleware('auth');
+
+Route::get('/laporan-siswa', [LaporanController::class, 'laporanSiswa'])->middleware('auth');
+Route::get('/laporan-siswa-cetak', [LaporanController::class, 'indexLaporanSiswa'])->middleware('auth');

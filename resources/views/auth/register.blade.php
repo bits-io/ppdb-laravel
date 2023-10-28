@@ -228,10 +228,10 @@
 
               </div>
 
-              <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">Register</button>
+              <button class="mb-5 w-100 btn btn-lg btn-primary mt-3" type="submit">Register</button>
 
             </form>
-            <small class="d-block text-center mt-3 mb-5">Have an account? <a href="/login">Login Now!</a></small>
+            {{-- <small class="d-block text-center mt-3 mb-5">Have an account? <a href="/login">Login Now!</a></small> --}}
 
         </main>
     </div>
