@@ -13,9 +13,15 @@ class PendaftaranController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $pendaftarans = Pendaftaran::latest()->get();
+        $pendaftarans = Pendaftaran::latest();
+
+        if ($request->status) {
+            $pendaftarans = $pendaftarans->where('status', $request->status );
+        }
+
+        $pendaftarans = $pendaftarans->get();
 
         return view('dashboard.pendaftaran.index',[
             'pendaftarans' => $pendaftarans
@@ -76,6 +82,24 @@ class PendaftaranController extends Controller
             if($request->status == "Lulus"){
                 $siswa = Siswa::where("id", $pendaftaran->siswa_id)->first();
                 $siswa->status = 'Lulus';
+                $siswa->save();
+            }
+
+            if($request->status == "Proses"){
+                $siswa = Siswa::where("id", $pendaftaran->siswa_id)->first();
+                $siswa->status = 'Tidak Lulus';
+                $siswa->save();
+            }
+
+            if($request->status == "Belum Bayar"){
+                $siswa = Siswa::where("id", $pendaftaran->siswa_id)->first();
+                $siswa->status = 'Tidak Lulus';
+                $siswa->save();
+            }
+
+            if($request->status == "Tidak Lulus"){
+                $siswa = Siswa::where("id", $pendaftaran->siswa_id)->first();
+                $siswa->status = 'Tidak Lulus';
                 $siswa->save();
             }
 

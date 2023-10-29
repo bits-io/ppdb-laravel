@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string('agama');
             $table->string('alamat');
             $table->string('email')->unique();
-            $table->string('password');
-            $table->string('status');
+            // $table->string('password');
+            $table->enum('status', ['Lulus', 'Tidak Lulus']);
             $table->timestamps();
         });
     }

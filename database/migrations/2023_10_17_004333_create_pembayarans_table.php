@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nama_bank')->nullable()->default(NULL);
             $table->string('bukti')->nullable();
             $table->integer('total_bayar');
-            $table->string('status');
+            $table->enum('status', ['Proses', 'Lunas', 'Belum Bayar']);
             $table->timestamps();
         });
     }

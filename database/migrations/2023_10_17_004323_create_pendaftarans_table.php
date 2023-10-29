@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('no_pendaftaran')->unique();
             $table->string('asal_sekolah');
             $table->string('tahun_ajaran');
-            $table->string('status');
+            $table->enum('status', ['Proses', 'Lulus', 'Tidak Lulus', 'Belum Bayar']);
 
             $table->timestamps();
 

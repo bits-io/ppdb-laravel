@@ -11,9 +11,15 @@ class SiswaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $siswas = Siswa::latest()->get();
+        $siswas = Siswa::latest();
+
+        if ($request->status) {
+            $siswas = $siswas->where('status', $request->status);
+        }
+
+        $siswas = $siswas->get();
 
         return view('dashboard.siswa.index',[
             'siswas' => $siswas

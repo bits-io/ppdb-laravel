@@ -39,7 +39,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Data Siswa:</h6>
                         <a class="collapse-item" href="/siswa?status=Lulus">Lulus</a>
-                        <a class="collapse-item" href="/siswa?status=TidakLulus">Tidak Lulus</a>
+                        <a class="collapse-item" href="/siswa?status=Tidak Lulus">Tidak Lulus</a>
                     </div>
                 </div>
             </li>
@@ -64,8 +64,8 @@
                         <h6 class="collapse-header">Pendaftaran:</h6>
                         <a class="collapse-item" href="/pendaftaran?status=Proses">Proses</a>
                         <a class="collapse-item" href="/pendaftaran?status=Lulus">Lulus</a>
-                        <a class="collapse-item" href="/pendaftaran?status=TidakLulus">Tidak Lulus</a>
-                        <a class="collapse-item" href="/pendaftaran?status=BelumBayar">Belum Bayar</a>
+                        <a class="collapse-item" href="/pendaftaran?status=Tidak Lulus">Tidak Lulus</a>
+                        <a class="collapse-item" href="/pendaftaran?status=Belum Bayar">Belum Bayar</a>
                     </div>
                 </div>
             </li>
@@ -83,7 +83,7 @@
                         <h6 class="collapse-header">Pembayaran:</h6>
                         <a class="collapse-item" href="/pembayaran?status=Proses">Proses</a>
                         <a class="collapse-item" href="/pembayaran?status=Lunas">Lunas</a>
-                        <a class="collapse-item" href="/pembayaran?status=BelumBayar">Belum Bayar</a>
+                        <a class="collapse-item" href="/pembayaran?status=Belum Bayar">Belum Bayar</a>
                     </div>
                 </div>
             </li>

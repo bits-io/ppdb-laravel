@@ -29,7 +29,7 @@
                 @enderror
 
               </div>
-              <div class="form-floating">
+              {{-- <div class="form-floating">
                 <input type="password" name="password" class="form-control mb-2 @error('password') is-invalid @enderror" id="floatingPassword" placeholder="Password">
                 <label for="password">Password</label>
 
@@ -39,7 +39,7 @@
                 </div>
                 @enderror
 
-              </div>
+              </div> --}}
 
               <div class="form-floating">
                 <input value="{{ old('nis') }}" type="number" name="nis" class="form-control mb-2 @error('nis') is-invalid @enderror" id="nis" placeholder="Nama Lengkap">

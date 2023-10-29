@@ -67,7 +67,7 @@ class AuthController extends Controller
             'agama' => 'required',
             'alamat' => 'required',
             'email' => 'required|unique:siswas|email',
-            'password' => 'required',
+            // 'password' => 'required',
 
             'asal_sekolah' => 'required',
             'tahun_ajaran' => 'required',
@@ -93,7 +93,7 @@ class AuthController extends Controller
             $siswa->agama = $request->input('agama');
             $siswa->alamat = $request->input('alamat');
             $siswa->email = $request->input('email');
-            $siswa->password = Hash::make($request->input('password'));
+            // $siswa->password = Hash::make($request->input('password'));
             $siswa->status = 'Tidak Lulus';
             $siswa->save();
 

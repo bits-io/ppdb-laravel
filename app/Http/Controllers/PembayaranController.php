@@ -12,9 +12,15 @@ class PembayaranController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $pembayarans = Pembayaran::latest()->get();
+        $pembayarans = Pembayaran::latest();
+
+        if ($request->status) {
+            $pembayarans = $pembayarans->where('status', 'like', '%'.$request->status . "%");
+        }
+
+        $pembayarans = $pembayarans->get();
 
         return view('dashboard.pembayaran.index',[
             'pembayarans' => $pembayarans
@@ -72,6 +78,18 @@ class PembayaranController extends Controller
             $pembayaran->save();
 
             if($request->status == "Lunas"){
+                $siswa = Pendaftaran::where("id", $pembayaran->pendaftaran_id)->first();
+                $siswa->status = 'Proses';
+                $siswa->save();
+            }
+
+            if($request->status == "Belum Bayar"){
+                $siswa = Pendaftaran::where("id", $pembayaran->pendaftaran_id)->first();
+                $siswa->status = 'Belum Bayar';
+                $siswa->save();
+            }
+
+            if($request->status == "Proses"){
                 $siswa = Pendaftaran::where("id", $pembayaran->pendaftaran_id)->first();
                 $siswa->status = 'Proses';
                 $siswa->save();
