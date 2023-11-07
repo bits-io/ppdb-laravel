@@ -217,6 +217,12 @@
 
               </div>
               <div class="form-floating">
+                <input type="number" name="total_bayar" class="form-control mb-2" id="total_bayar" value="50000"  placeholder="50000" readonly>
+                <label for="total_bayar">Total Bayar</label>
+
+              </div>
+
+              <div class="form-floating">
                 <input type="file" name="bukti" class="form-control mb-2 @error('bukti') is-invalid @enderror" id="bukti" placeholder="Bukti">
                 <label for="bukti">Bukti</label>
 
