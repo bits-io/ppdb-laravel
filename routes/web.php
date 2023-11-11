@@ -44,3 +44,9 @@ Route::resource('/profile', ProfileController::class)->middleware('auth');
 
 Route::get('/laporan-siswa', [LaporanController::class, 'laporanSiswa'])->middleware('auth');
 Route::get('/laporan-siswa-cetak', [LaporanController::class, 'indexLaporanSiswa'])->middleware('auth');
+
+Route::get('/laporan-pendaftaran', [LaporanController::class, 'laporanPendaftaran'])->middleware('auth');
+Route::get('/laporan-pendaftaran-cetak', [LaporanController::class, 'indexLaporanPendaftaran'])->middleware('auth');
+
+Route::get('/laporan-pembayaran', [LaporanController::class, 'laporanPembayaran'])->middleware('auth');
+Route::get('/laporan-pembayaran-cetak', [LaporanController::class, 'indexLaporanPembayaran'])->middleware('auth');

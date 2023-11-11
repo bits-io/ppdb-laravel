@@ -21,7 +21,15 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 mt-5 text-gray-800">Data pendaftaran</h1>
+        <table align="center" style="margin-top: 10px; margin-bottom: 2px;">
+            <td align="center">
+                <h2>DATA PENDAFTARAN</h2>
+                <h4>SMK MUTIARA HIKMAH</h4>
+				<h5>KELURAHAN KARANGANYAR KECAMATAN KAWALU</h5>
+                <p>Alamat : Tamanjaya, Ciemas, Sukabumi Regency, West Java 43177</p>
+            </td>
+        </table>
+        <hr noshade size=4 width="98%">
 
                 <div class="row">
                     <div class="col-lg-4">

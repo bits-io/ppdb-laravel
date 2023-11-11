@@ -99,9 +99,9 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Laporan:</h6>
-                        <a class="collapse-item" href="/laporan?status=Proses">Pembayaran</a>
-                        <a class="collapse-item" href="/laporan?status=Lunas">Pendaftaran</a>
-                        <a class="collapse-item" href="/laporan?status=BelumBayar">Siswa</a>
+                        <a class="collapse-item" href="/laporan-pembayaran">Pembayaran</a>
+                        <a class="collapse-item" href="/laporan-pendaftaran">Pendaftaran</a>
+                        <a class="collapse-item" href="/laporan-siswa">Siswa</a>
                     </div>
                 </div>
             </li>

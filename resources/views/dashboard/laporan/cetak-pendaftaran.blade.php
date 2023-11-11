@@ -31,24 +31,22 @@
 			<thead>
 				<tr>
 					<th class="text-center align-middle" >No</th>
+					<th class="text-center align-middle" >No Pendaftaran</th>
 					<th class="text-center align-middle" >Nama</th>
-					<th class="text-center align-middle" >Jenis Kelamin</th>
 					<th class="text-center align-middle" >Asal Sekolah</th>
-					<th class="text-center align-middle" >Tempat Lahir</th>
-					<th class="text-center align-middle" >Tanggal Lahir</th>
+					<th class="text-center align-middle" >Status</th>
 					<th class="text-center align-middle" >Tanggal Daftar</th>
 				</tr>
 			</thead>
 			<tbody>
-				@foreach ($siswas as $siswa)
+				@foreach ($pendaftarans as $pendaftaran)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $siswa->name }}</td>
-                        <td>{{ $siswa->jenis_kelamin }}</td>
-                        <td>{{ $siswa->pendaftaran->asal_sekolah ?? '-' }}</td>
-                        <td>{{ $siswa->tempat_lahir }}</td>
-                        <td>{{ $siswa->tanggal_lahir }}</td>
-                        <td>{{ $siswa->created_at    }}</td>
+                        <td>{{ $pendaftaran->no_pendaftaran }}</td>
+                        <td>{{ $pendaftaran->siswa->name ?? '-' }}</td>
+                        <td>{{ $pendaftaran->asal_sekolah ?? '-' }}</td>
+                        <td>{{ $pendaftaran->status }}</td>
+                        <td>{{ $pendaftaran->created_at    }}</td>
                     </tr>
                 @endforeach
 			</tbody>

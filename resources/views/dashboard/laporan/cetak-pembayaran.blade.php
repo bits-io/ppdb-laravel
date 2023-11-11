@@ -31,26 +31,30 @@
 			<thead>
 				<tr>
 					<th class="text-center align-middle" >No</th>
-					<th class="text-center align-middle" >Nama</th>
-					<th class="text-center align-middle" >Jenis Kelamin</th>
-					<th class="text-center align-middle" >Asal Sekolah</th>
-					<th class="text-center align-middle" >Tempat Lahir</th>
-					<th class="text-center align-middle" >Tanggal Lahir</th>
-					<th class="text-center align-middle" >Tanggal Daftar</th>
+					<th class="text-center align-middle" >No Pembayaran</th>
+					<th class="text-center align-middle" >Nama Siswa</th>
+					<th class="text-center align-middle" >Nama Bank</th>
+					<th class="text-center align-middle" >Total Bayar</th>
+					<th class="text-center align-middle" >Status</th>
+					<th class="text-center align-middle" >Tanggal Pembayaran</th>
 				</tr>
 			</thead>
 			<tbody>
-				@foreach ($siswas as $siswa)
+				@foreach ($pembayarans as $pembayaran)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $siswa->name }}</td>
-                        <td>{{ $siswa->jenis_kelamin }}</td>
-                        <td>{{ $siswa->pendaftaran->asal_sekolah ?? '-' }}</td>
-                        <td>{{ $siswa->tempat_lahir }}</td>
-                        <td>{{ $siswa->tanggal_lahir }}</td>
-                        <td>{{ $siswa->created_at    }}</td>
+                        <td>{{ $pembayaran->no_pembayaran }}</td>
+                        <td>{{ $pembayaran->pendaftaran->siswa->name ?? '-' }}</td>
+                        <td>{{ $pembayaran->nama_bank }}</td>
+                        <td>Rp{{ number_format($pembayaran->total_bayar, 0, '.', '.') }}</td>
+                        <td>{{ $pembayaran->status }}</td>
+                        <td>{{ $pembayaran->created_at }}</td>
                     </tr>
                 @endforeach
+                <tr>
+                    <td colspan="4" class="text-right">Total</td>
+                    <td colspan="3">Rp{{ number_format($total, 0, '.', '.') }}</td>
+                </tr>
 			</tbody>
             </table>
         </div>

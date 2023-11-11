@@ -121,7 +121,7 @@
                                 <!-- Form Row-->
                                 <div class="row gx-3 mb-3">
                                     <!-- Form Group (phone number)-->
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <label class="small mb-1" for="email">Email</label>
                                         <input class="form-control @error('email') is-invalid @enderror" name="email" id="email" type="email" value="{{ old('email', $siswa->email) }}">
 
@@ -133,19 +133,9 @@
 
                                     </div>
                                     <!-- Form Group (birthday)-->
-                                    <div class="col-md-6">
-                                        <label class="small mb-1" for="password">Password</label>
-                                        <input class="form-control @error('password') is-invalid @enderror" name="password" id="password" type="password" name="birthday" value="">
-
-                                        @error('password')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                        @enderror
-
-                                    </div>
                                 </div>
                                 <!-- Save changes button-->
+                                <a class="btn btn-outline-success" href="/siswa">Kembali</a>
                                 <button class="btn btn-success" type="submit">Simpan Perubahan</button>
                             </form>
                         </div>

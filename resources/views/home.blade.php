@@ -76,7 +76,7 @@
             <h1>Sekolah Menengah Kejuruan <span>Mutiara Hikmah Ciemas</span></h1>
             <h2> Kami menyediakan program pendidikan berkualitas dalam jurusan otomotif dan perkantoran.</h2>
             <div class="text-center text-lg-start">
-              <a href="#pendaftaran" class="btn-get-started scrollto">Segera Daftar</a>
+              <a href="/register" class="btn-get-started scrollto">Segera Daftar</a>
             </div>
           </div>
         </div>
@@ -119,14 +119,14 @@
             <p>Pilihan Karier Terbaik</p>
 
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
-              <div class="icon"><i class="bx bx-fingerprint"></i></div>
-              <h4 class="title"><a href="">Jurusan Otomotif</a></h4>
+              <div class="icon"><i class="bx bx-cricket-ball"></i></div>
+              <h4 class="title"><a href="">Jurusan Teknik Kendaraan Ringan Otomotif</a></h4>
               <p class="description">Dalam jurusan ini, siswa akan mendapatkan pelatihan mendalam dalam dunia otomotif, termasuk pemeliharaan, perbaikan, dan pemrograman kendaraan. Ini adalah jalan pintas untuk menjadi ahli di industri otomotif yang terus berkembang.</p>
             </div>
 
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
-              <div class="icon"><i class="bx bx-gift"></i></div>
-              <h4 class="title"><a href="">Jurusan Perkantoran</a></h4>
+              <div class="icon"><i class="bx bx-receipt"></i></div>
+              <h4 class="title"><a href="">Jurusan Otomatisasi dan Tata Kelola Perkantoran</a></h4>
               <p class="description">Jurusan ini mempersiapkan siswa untuk karier di dunia perkantoran. Mereka akan memperoleh keterampilan yang diperlukan dalam administrasi, manajemen, dan komunikasi bisnis, membuka pintu bagi berbagai peluang karier di dunia bisnis dan administrasi.</p>
             </div>
 
@@ -135,6 +135,30 @@
 
       </div>
     </section><!-- End About Section -->
+
+    <section id="fasilitas" class="features">
+        <div class="container">
+
+          <div class="section-title" data-aos="fade-up">
+            <h2>Latar Belakang</h2>
+            <p>Latar Belakang </p>
+          </div>
+
+          <div class="row" data-aos="fade-left">
+              <div class="col-lg-12 col-md-12">
+                <p class="text-center">Yayasan Nurul Hikmah Berdiri pada tahun 2004 di Kp. Cijambe Desa Tamanjaya Kec. Ciemas 43177.
+                    Didirikan Oleh : H. Dzakaria Bin Totoh, Solihin Mansur, Lilih Gina Sugiawati, dan Baedah. Didasari
+                    karna inginnya mendirikan sebuah lembaga pendidikan dibawah satuan yayasan yang selanjutnya
+                    dapat mendirikan lembaga pendidikan sperti Mts, MA, SMK dan PONPEs, Sehingga dapat
+                    memudahkan masyarakat sekitar untuk dapat akses pendidikan yang dekat dengan pemukiman
+                    warga stetmpat, yang kebetula pada waktu akses pendidikan masih langka dan sulit.</p>
+              <div class="icon-box" data-aos="zoom-in" data-aos-delay="50">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
 
     <!-- ======= Features Section ======= -->
     <section id="fasilitas" class="features">
@@ -149,73 +173,73 @@
           <div class="col-lg-3 col-md-4">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="50">
               <i class="ri-gradienter-line" style="color: #ffbb2c;"></i>
-              <h3><a href="">Lab Komputer</a></h3>
+              <h3><a href="">Pondok Pesantren</a></h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
               <i class="ri-gradienter-line" style="color: #5578ff;"></i>
-              <h3><a href="">Lapang Bola Voli</a></h3>
+              <h3><a href="">Mesjid</a></h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="150">
               <i class="ri-gradienter-line" style="color: #e80368;"></i>
-              <h3><a href="">Lapang Bola Futsal</a></h3>
+              <h3><a href="">Lab. Komputer</a></h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
               <i class="ri-gradienter-line" style="color: #e361ff;"></i>
-              <h3><a href="">Kelas</a></h3>
+              <h3><a href="">Perpustakaaan</a></h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="250">
               <i class="ri-gradienter-line" style="color: #47aeff;"></i>
-              <h3><a href="">Ruang Guru</a></h3>
+              <h3><a href="">Lab. Keagamaan</a></h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
               <i class="ri-gradienter-line" style="color: #ffa76e;"></i>
-              <h3><a href="">Mesjid</a></h3>
+              <h3><a href="">Lab. Mesin Jahit</a></h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="350">
               <i class="ri-gradienter-line" style="color: #11dbcf;"></i>
-              <h3><a href="">Lapang Upacara</a></h3>
+              <h3><a href="">Aula Serbaguna</a></h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="400">
               <i class="ri-gradienter-line" style="color: #4233ff;"></i>
-              <h3><a href="">Perpustakaan</a></h3>
+              <h3><a href="">Lapangan Futsal</a></h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="450">
               <i class="ri-gradienter-line" style="color: #b2904f;"></i>
-              <h3><a href="">Ruang Aula</a></h3>
+              <h3><a href="">Lapangan Vollyball</a></h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="500">
               <i class="ri-gradienter-line" style="color: #b20969;"></i>
-              <h3><a href="">Lab Mesin Jahit</a></h3>
+              <h3><a href="">Toilet</a></h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="550">
               <i class="ri-gradienter-line" style="color: #ff5828;"></i>
-              <h3><a href="">Taman</a></h3>
+              <h3><a href="">Lapangan Upacara</a></h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="600">
               <i class="ri-gradienter-line" style="color: #29cc61;"></i>
-              <h3><a href="">Kantin</a></h3>
+              <h3><a href="">Ruang Kelas</a></h3>
             </div>
           </div>
         </div>
@@ -338,32 +362,32 @@
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-              <a href="assets2/img/gallery/gallery-1.jpg" class="gallery-lightbox">
-                <img src="assets2/img/gallery/gallery-1.jpg" alt="" class="img-fluid">
+              <a href="assets2/img/gallery/gallery-1.png" class="gallery-lightbox">
+                <img src="assets2/img/gallery/gallery-1.png" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item" data-aos="zoom-in" data-aos-delay="150">
-              <a href="assets2/img/gallery/gallery-2.jpg" class="gallery-lightbox">
-                <img src="assets2/img/gallery/gallery-2.jpg" alt="" class="img-fluid">
+              <a href="assets2/img/gallery/gallery-2.png" class="gallery-lightbox">
+                <img src="assets2/img/gallery/gallery-2.png" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-              <a href="assets2/img/gallery/gallery-3.jpg" class="gallery-lightbox">
-                <img src="assets2/img/gallery/gallery-3.jpg" alt="" class="img-fluid">
+              <a href="assets2/img/gallery/gallery-3.png" class="gallery-lightbox">
+                <img src="assets2/img/gallery/gallery-3.png" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item" data-aos="zoom-in" data-aos-delay="250">
-              <a href="assets2/img/gallery/gallery-4.jpg" class="gallery-lightbox">
-                <img src="assets2/img/gallery/gallery-4.jpg" alt="" class="img-fluid">
+              <a href="assets2/img/gallery/gallery-4.png" class="gallery-lightbox">
+                <img src="assets2/img/gallery/gallery-4.png" alt="" class="img-fluid">
               </a>
             </div>
           </div>
@@ -493,7 +517,7 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="200">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="#" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -513,7 +537,7 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit">Daftar</button></div>
+              <div class="text-center"><button type="submit">Kirim</button></div>
             </form>
 
           </div>

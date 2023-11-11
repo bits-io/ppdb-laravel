@@ -82,6 +82,7 @@
                                     @enderror
 
                                 </div>
+                                <a class="btn btn-outline-success" href="/pendaftaran">Kembali</a>
                                 <!-- Save changes button-->
                                 <button class="btn btn-success" type="submit">Simpan Perubahan</button>
                             </form>

@@ -43,7 +43,7 @@
                                 <div class="mb-3">
                                     <label class="small mb-1" for="bukti">Bukti</label>
                                     <input class="form-control @error('bukti') is-invalid @enderror" name="bukti" id="bukti" type="text" value="{{ old('bukti', $pembayaran->bukti) }}" readonly>
-
+                                    <img class="mt-3 col-lg-6 col-md-6 col-sm-6" src="{{ old('bukti', $pembayaran->bukti) }}" alt="" srcset="">
                                     @error('bukti')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -81,6 +81,7 @@
                                     @enderror
 
                                 </div>
+                                <a class="btn btn-outline-success" href="/pembayaran">Kembali</a>
                                 <!-- Save changes button-->
                                 <button class="btn btn-success" type="submit">Simpan Perubahan</button>
                             </form>
