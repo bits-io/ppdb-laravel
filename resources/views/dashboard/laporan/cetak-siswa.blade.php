@@ -45,7 +45,7 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $siswa->name }}</td>
                         <td>{{ $siswa->jenis_kelamin }}</td>
-                        <td>{{ $siswa->pendaftaran->asal_sekolah ?? '-' }}</td>
+                        <td>{{ $siswa->asal_sekolah ?? '-' }}</td>
                         <td>{{ $siswa->tempat_lahir }}</td>
                         <td>{{ $siswa->tanggal_lahir }}</td>
                         <td>{{ $siswa->created_at    }}</td>

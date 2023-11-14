@@ -131,7 +131,7 @@
 
               </div>
 
-              <h5 class="mt-3 mb-3">Data Sekolah</h5>
+              {{-- <h5 class="mt-3 mb-3">Data Sekolah</h5> --}}
               <div class="form-floating">
                 <input value="{{ old('asal_sekolah') }}" type="text" name="asal_sekolah" class="form-control mb-2 @error('asal_sekolah') is-invalid @enderror" id="asal_sekolah" placeholder="Asal Sekolah">
                 <label for="asal_sekolah">Asal Sekolah</label>
@@ -194,6 +194,24 @@
                 <label for="no_hp_orang_tua">No HP</label>
 
                 @error('no_hp_orang_tua')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+                @enderror
+
+              </div>
+
+              <h5 class="mt-3 mb-3">Data Pendaftaran</h5>
+              <div class="form-floating">
+                <select name="jalur" class="form-control mb-2 @error('jalur') is-invalid @enderror" id="jalur">
+                    <option value="">Pilih Jalur Pendaftaran</option>
+                    <option value="Beasiswa Akademik">Beasiswa Akademik</option>
+                    <option value="Beasiswa Ekstrakulikuler">Beasiswa Ekstrakulikuler</option>
+                    <option value="Umum">Umum</option>
+                </select>
+                <label for="jalur">Jalur Pendaftaran</label>
+
+                @error('jalur')
                 <div class="invalid-feedback">
                     {{ $message }}
                 </div>

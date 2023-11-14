@@ -41,10 +41,10 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label class="small mb-1" for="asal_sekolah">Asal Sekolah</label>
-                                    <input class="form-control @error('asal_sekolah') is-invalid @enderror" name="asal_sekolah" id="asal_sekolah" type="text" value="{{ old('asal_sekolah', $pendaftaran->asal_sekolah) }}" readonly>
+                                    <label class="small mb-1" for="jalur">Jalur</label>
+                                    <input class="form-control @error('jalur') is-invalid @enderror" name="jalur" id="jalur" type="text" value="{{ old('jalur', $pendaftaran->jalur) }}" readonly>
 
-                                    @error('asal_sekolah')
+                                    @error('jalur')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
@@ -52,17 +52,6 @@
 
                                 </div>
 
-                                <div class="mb-3">
-                                    <label class="small mb-1" for="tahun_ajaran">Tahun Ajaran</label>
-                                    <input class="form-control @error('tahun_ajaran') is-invalid @enderror" name="tahun_ajaran" id="tahun_ajaran" type="text" value="{{ old('tahun_ajaran', $pendaftaran->tahun_ajaran) }}" readonly>
-
-                                    @error('tahun_ajaran')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                    @enderror
-
-                                </div>
 
                                 <div class="mb-3">
                                     <label class="small mb-1" for="name">Status</label>

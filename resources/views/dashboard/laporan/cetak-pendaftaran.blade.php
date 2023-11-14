@@ -34,6 +34,7 @@
 					<th class="text-center align-middle" >No Pendaftaran</th>
 					<th class="text-center align-middle" >Nama</th>
 					<th class="text-center align-middle" >Asal Sekolah</th>
+					<th class="text-center align-middle" >Jalur</th>
 					<th class="text-center align-middle" >Status</th>
 					<th class="text-center align-middle" >Tanggal Daftar</th>
 				</tr>
@@ -44,7 +45,8 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $pendaftaran->no_pendaftaran }}</td>
                         <td>{{ $pendaftaran->siswa->name ?? '-' }}</td>
-                        <td>{{ $pendaftaran->asal_sekolah ?? '-' }}</td>
+                        <td>{{ $pendaftaran->siswa->asal_sekolah ?? '-' }}</td>
+                        <td>{{ $pendaftaran->jalur ?? '-' }}</td>
                         <td>{{ $pendaftaran->status }}</td>
                         <td>{{ $pendaftaran->created_at    }}</td>
                     </tr>

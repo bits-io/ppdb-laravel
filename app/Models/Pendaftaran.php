@@ -13,8 +13,7 @@ class Pendaftaran extends Model
         'siswa_id',
         'admin_id',
         'no_pendaftaran',
-        'asal_sekolah',
-        'tahun_ajaran',
+        'jalur',
         'status'
     ];
 

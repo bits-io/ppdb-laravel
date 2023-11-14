@@ -23,6 +23,8 @@
                             <p>Agama : {{ $siswa->agama }}</p>
                             <p>Alamat : {{ $siswa->alamat }}</p>
                             <p>Email : {{ $siswa->email }}</p>
+                            <p>Asal Sekolah : {{ $siswa->asal_sekolah }}</p>
+                            <p>Tahun Ajaran : {{ $siswa->tahun_ajaran }}</p>
                             <p>Status : {{ $siswa->status }}</p>
 
                         </div>

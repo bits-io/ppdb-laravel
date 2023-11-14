@@ -106,6 +106,33 @@
                                         </select>
                                     </div>
                                 </div>
+                                <div class="row gx-3 mb-3">
+                                    <!-- Form Group (phone number)-->
+                                    <div class="col-md-6">
+                                        <label class="small mb-1" for="asal_sekolah">Asal Sekolah</label>
+                                        <input class="form-control @error('asal_sekolah') is-invalid @enderror" name="asal_sekolah" id="asal_sekolah" type="text" value="{{ old('asal_sekolah', $siswa->asal_sekolah) }}">
+
+                                        @error('asal_sekolah')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
+
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label class="small mb-1" for="tahun_ajaran">Email</label>
+                                        <input class="form-control @error('tahun_ajaran') is-invalid @enderror" name="tahun_ajaran" id="tahun_ajaran" type="text" value="{{ old('tahun_ajaran', $siswa->tahun_ajaran) }}">
+
+                                        @error('tahun_ajaran')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
+
+                                    </div>
+                                    <!-- Form Group (birthday)-->
+                                </div>
                                 <!-- Form Group (email address)-->
                                 <div class="mb-3">
                                     <label class="small mb-1" for="alamat">Alamat</label>
@@ -134,6 +161,8 @@
                                     </div>
                                     <!-- Form Group (birthday)-->
                                 </div>
+
+
                                 <!-- Save changes button-->
                                 <a class="btn btn-outline-success" href="/siswa">Kembali</a>
                                 <button class="btn btn-success" type="submit">Simpan Perubahan</button>

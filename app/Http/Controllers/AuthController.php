@@ -93,6 +93,9 @@ class AuthController extends Controller
             $siswa->agama = $request->input('agama');
             $siswa->alamat = $request->input('alamat');
             $siswa->email = $request->input('email');
+
+            $siswa->asal_sekolah = $request->input('asal_sekolah');
+            $siswa->tahun_ajaran = $request->input('tahun_ajaran');
             // $siswa->password = Hash::make($request->input('password'));
             $siswa->status = 'Tidak Lulus';
             $siswa->save();
@@ -107,8 +110,7 @@ class AuthController extends Controller
 
             $pendaftaran = new Pendaftaran();
             $pendaftaran->siswa_id = $siswa->id;
-            $pendaftaran->asal_sekolah = $request->input('asal_sekolah');
-            $pendaftaran->tahun_ajaran = $request->input('tahun_ajaran');
+            $pendaftaran->jalur = $request->input('jalur');
             $pendaftaran->status = "Proses";
             $pendaftaran->save();
 
@@ -179,6 +181,6 @@ class AuthController extends Controller
             return back()->with('error', 'Nomor not found!');
         }
 
-        return redirect("/pendaftaran/".$request->find )->with('success', 'Registration Successfully!');
+        return redirect("/cari-pendaftaran/".$request->find )->with('success', 'Registration Successfully!');
     }
 }

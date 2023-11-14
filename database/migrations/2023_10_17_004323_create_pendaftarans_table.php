@@ -17,8 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('admin_id')->nullable();
 
             $table->string('no_pendaftaran')->unique();
-            $table->string('asal_sekolah');
-            $table->string('tahun_ajaran');
+            $table->enum('jalur', ['Beasiswa Akademik', 'Beasiswa Ekstrakulikuler', 'Umum']);
             $table->enum('status', ['Proses', 'Lulus', 'Tidak Lulus', 'Belum Bayar']);
 
             $table->timestamps();

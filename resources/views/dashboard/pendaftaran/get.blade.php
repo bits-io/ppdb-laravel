@@ -38,8 +38,8 @@
                             <div class="card-header">Data pendaftaran</div>
                             <div class="card-body">
                                 <p>No Pendaftaran : {{ $pendaftaran->no_pendaftaran }}</p>
-                                <p>Asal Sekolah : {{ $pendaftaran->asal_sekolah }}</p>
-                                <p>Tahun Ajaran : {{ $pendaftaran->tahun_ajaran }}</p>
+                                <p>Asal Sekolah : {{ $pendaftaran->siswa->asal_sekolah }}</p>
+                                <p>Tahun Ajaran : {{ $pendaftaran->siswa->tahun_ajaran }}</p>
                                 <p>Status : {{ $pendaftaran->status }}</p>
                             </div>
                         </div>

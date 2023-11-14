@@ -18,7 +18,8 @@ class Siswa extends Model
         'agama',
         'alamat',
         'email',
-        'password',
+        'asal_sekolah',
+        'tahun_ajaran',
         'status'
     ];
 

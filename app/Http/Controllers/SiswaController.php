@@ -75,8 +75,10 @@ class SiswaController extends Controller
             'jenis_kelamin' => 'required|max:255',
             'agama' => 'required|max:255',
             'alamat' => 'required|max:255',
+            'asal_sekolah' => 'required|max:255',
+            'tahun_ajaran' => 'required|max:255',
             'email' => 'required|max:255|email',
-            'password' => 'nullable|max:255'
+
         ]);
 
         $siswa->nis = $request->nis;
@@ -85,11 +87,9 @@ class SiswaController extends Controller
         $siswa->tempat_lahir = $request->tempat_lahir;
         $siswa->jenis_kelamin = $request->jenis_kelamin;
         $siswa->agama = $request->agama;
+        $siswa->asal_sekolah = $request->asal_sekolah;
+        $siswa->tahun_ajaran = $request->tahun_ajaran;
         $siswa->alamat = $request->alamat;
-
-        if ($request->password) {
-            $siswa->password = Hash::make($request->password);
-        }
 
         $siswa->save();
 

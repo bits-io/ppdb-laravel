@@ -32,7 +32,7 @@
                             <th>No Pendaftaran</th>
                             <th>Nama Siswa</th>
                             <th>Asal Sekolah</th>
-                            <th>Tahun Ajaran</th>
+                            <th>Jalur</th>
                             <th>Status</th>
                             <th>Aksi</th>
                         </tr>
@@ -42,7 +42,7 @@
                             <th>No Pendaftaran</th>
                             <th>Nama Siswa</th>
                             <th>Asal Sekolah</th>
-                            <th>Tahun Ajaran</th>
+                            <th>Jalur</th>
                             <th>Status</th>
                             <th>Aksi</th>
                         </tr>
@@ -51,10 +51,10 @@
                         @foreach ($pendaftarans as $pendaftaran)
 
                         <tr>
-                            <td>{{ $pendaftaran->no_pendaftaran }}</td>
+                            <td>{{ $pendaftaran->no_pendaftaran ?? '-' }}</td>
                             <td>{{ $pendaftaran->siswa->name }}</td>
-                            <td>{{ $pendaftaran->asal_sekolah }}</td>
-                            <td>{{ $pendaftaran->tahun_ajaran }}</td>
+                            <td>{{ $pendaftaran->siswa->asal_sekolah }}</td>
+                            <td>{{ $pendaftaran->jalur }}</td>
                             <td>{{ $pendaftaran->status }}</td>
                             <td>
                                 <a href="/pendaftaran/{{ $pendaftaran->id }}" class="btn btn-sm btn-info border-0"><i class="fas fa-fw fa-eye"></i></a>

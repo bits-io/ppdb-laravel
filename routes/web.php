@@ -36,7 +36,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 Route::get('/find', [AuthController::class, 'indexFind']);
 Route::post('/find', [AuthController::class, 'find']);
 
-Route::get('/pendaftaran/{no}', [PendaftaranController::class, 'get']);
+Route::get('/cari-pendaftaran/{no}', [PendaftaranController::class, 'get']);
 Route::resource('/siswa', SiswaController::class)->middleware('auth');
 Route::resource('/pendaftaran', PendaftaranController::class)->middleware('auth');
 Route::resource('/pembayaran', PembayaranController::class)->middleware('auth');

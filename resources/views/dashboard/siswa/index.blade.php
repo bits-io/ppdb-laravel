@@ -52,7 +52,7 @@
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $siswa->name }}</td>
                             <td>{{ $siswa->tempat_lahir }}/{{ $siswa->tanggal_lahir }}</td>
-                            <td>{{ $siswa->pendaftaran->asal_sekolah ?? '-' }}</td>
+                            <td>{{ $siswa->asal_sekolah ?? '-' }}</td>
                             <td>
                                 <a href="/siswa/{{ $siswa->id }}" class="btn btn-sm btn-info border-0"><i class="fas fa-fw fa-eye"></i></a>
                                 <a href="/siswa/{{ $siswa->id }}/edit" class="btn btn-sm btn-warning border-0"><i class="fas fa-fw fa-edit"></i></a>

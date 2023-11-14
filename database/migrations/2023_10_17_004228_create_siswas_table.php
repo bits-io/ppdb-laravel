@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('jenis_kelamin');
             $table->string('agama');
             $table->string('alamat');
+            $table->string('asal_sekolah');
+            $table->string('tahun_ajaran');
             $table->string('email')->unique();
             // $table->string('password');
             $table->enum('status', ['Lulus', 'Tidak Lulus']);

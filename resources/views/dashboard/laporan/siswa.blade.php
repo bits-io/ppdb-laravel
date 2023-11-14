@@ -5,7 +5,7 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Edit siswa</h1>
+    <h1 class="h3 mb-2 text-gray-800">Cetak siswa</h1>
 
             <div class="row">
                 <div class="col-xl-8">

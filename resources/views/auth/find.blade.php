@@ -37,7 +37,7 @@
 
               </div>
 
-              <button class="w-100 btn btn-lg btn-primary" type="submit">Cari</button>
+              <button class="w-100 btn btn-lg btn-success" type="submit">Cari</button>
 
             </form>
             <small class="d-block text-center mt-3">Not Register? <a href="/register">Register Now!</a></small>
