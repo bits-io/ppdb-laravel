@@ -59,11 +59,11 @@
                             <td>
                                 <a href="/pendaftaran/{{ $pendaftaran->id }}" class="btn btn-sm btn-info border-0"><i class="fas fa-fw fa-eye"></i></a>
                                 <a href="/pendaftaran/{{ $pendaftaran->id }}/edit" class="btn btn-sm btn-warning border-0"><i class="fas fa-fw fa-edit"></i></a>
-                                <form action="/pendaftaran/{{ $pendaftaran->id }}" method="post" class="d-inline">
+                                {{-- <form action="/pendaftaran/{{ $pendaftaran->id }}" method="post" class="d-inline">
                                     @method('delete')
                                     @csrf
                                     <button class="btn btn-sm btn-danger border-0" onclick="return confirm('Are you sure?')"><i class="fas fa-fw fa-trash"></i></button>
-                                </form>
+                                </form> --}}
                             </td>
                         </tr>
 

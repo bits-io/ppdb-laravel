@@ -19,7 +19,7 @@
         </div>
         @endif
 
-        <main class="form-signin">
+        <main class="form-signin mt-6">
             <h1 class="h3 mb-3 fw-normal text-center">Please login</h1>
             <form action="/login" method="POST">
                 @csrf
@@ -49,7 +49,7 @@
 
               </div>
 
-              <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+              <button class="w-100 btn btn-lg btn-success" type="submit">Login</button>
 
             </form>
             {{-- <small class="d-block text-center mt-3">Not Register? <a href="/register">Register Now!</a></small> --}}
