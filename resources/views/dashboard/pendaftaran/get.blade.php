@@ -25,8 +25,8 @@
             <td align="center">
                 <h2>DATA PENDAFTARAN</h2>
                 <h4>SMK MUTIARA HIKMAH</h4>
-				<h5>KELURAHAN KARANGANYAR KECAMATAN </h5>
-                <p>Alamat : Tamanjaya, Ciemas, Sukabumi Regency, West Java 43177</p>
+				<h5>DESA TAMANJAYA KECAMATAN CIEMAS</h5>
+                <p>Alamat : Kp. Cijambe Desa Tamanjaya Kec. Ciemas 43177</p>
             </td>
         </table>
         <hr noshade size=4 width="98%">
