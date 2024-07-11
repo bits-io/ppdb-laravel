@@ -18,8 +18,8 @@
         <table align="center" style="margin-top: 10px; margin-bottom: 2px;">
             <td align="center">
                 <h4>SMK MUTIARA HIKMAH</h4>
-				<h5>KELURAHAN KARANGANYAR KECAMATAN KAWALU</h5>
-                <p>Alamat : Tamanjaya, Ciemas, Sukabumi Regency, West Java 43177</p>
+				<h5>DESA TAMANJAYA KECAMATAN CIEMAS</h5>
+                <p>Alamat : Kp. Cijambe Desa Tamanjaya Kec. Ciemas 43177</p>
             </td>
         </table>
         <hr noshade size=4 width="98%">

@@ -25,7 +25,7 @@
             <td align="center">
                 <h2>DATA PENDAFTARAN</h2>
                 <h4>SMK MUTIARA HIKMAH</h4>
-				<h5>KELURAHAN KARANGANYAR KECAMATAN KAWALU</h5>
+				<h5>KELURAHAN KARANGANYAR KECAMATAN </h5>
                 <p>Alamat : Tamanjaya, Ciemas, Sukabumi Regency, West Java 43177</p>
             </td>
         </table>
