@@ -91,7 +91,7 @@
                     <option value="Laki-laki">Laki-laki</option>
                     <option value="Perempuan">Perempuan</option>
                 </select>
-                <label for="jenis_kelamin">Agama</label>
+                <label for="jenis_kelamin">Jenis Kelamin</label>
 
                 @error('jenis_kelamin')
                 <div class="invalid-feedback">
