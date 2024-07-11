@@ -141,12 +141,11 @@ class AuthController extends Controller
 
 
             DB::commit();
-            return redirect("/pendaftaran/".$pendaftaran->no_pendaftaran )->with('success', 'Registration Successfully!');
+            return redirect()->route('cari.pendaftaran', ['no' => $pendaftaran->no_pendaftaran])->with('success', 'Registration Successfully!');
         } catch (\Throwable $th) {
 
             DB::rollBack();
-            throw $th;
-            // return redirect('/register')->with('error', 'Registration Failed!');
+            return redirect('/register')->with('error', 'Registration Failed!');
         }
 
 
